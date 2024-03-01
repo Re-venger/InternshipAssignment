@@ -67,25 +67,6 @@ const logoutUser = (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // in order to increase the security we user RS256 system for storing and verifying the user requests 
 const generateUserKeys = async (userID) => {
     try {
@@ -99,7 +80,6 @@ const generateUserKeys = async (userID) => {
 
             const userkeys = new UserKeys({ userID, privateKey, publicKey });
             await userkeys.save();
-            console.log("Key created");
         } else {
             console.log("Users Keys already exsists");
         }
@@ -119,7 +99,6 @@ const createToken = async (user) => {
             uid: user._id.toHexString(),
             email: user.email
         })
-        console.log("Encrypted: ", payloadGen);
         const token = jwt.sign({payloadGen}, privateKey, {
             algorithm: 'RS256',
             expiresIn: '1h'

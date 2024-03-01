@@ -12,7 +12,7 @@ const priorityLevels = {
 }
 
 
-const taskSchdule = cron.schedule('*/10 * * * * *', async () => {
+const taskSchdule = cron.schedule('0 0 0 * * *', async () => {
     try {
         const all_rem_tasks = await Tasks.find({ status: { $ne: "DONE" } });
         all_rem_tasks.map(async(task)=>{

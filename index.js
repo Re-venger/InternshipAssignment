@@ -4,9 +4,7 @@ import authRouter from "./routes/authRoutes.js";
 import dotenv from 'dotenv';
 import cookieParser from "cookie-parser";
 import tasksRouter from "./routes/taskRoutes.js";
-
 import callScheduler from "./controller/callScheduler.js"
-import  tataskSchdules from "./controller/scheduleController.js"
 import taskSchdule from "./controller/scheduleController.js";
 dotenv.config()
 

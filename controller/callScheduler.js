@@ -43,7 +43,8 @@ const callUser = async (userPhoneNumber) => {
     }
   };
 
-const callSchedule = cron.schedule("* * 12 * * *", async () => {
+// checking every 12 hrs
+const callSchedule = cron.schedule("* * 23 * * *", async () => {
     try {
         for (let priority = 0; priority <= 2; priority++) {
             const users = await getUserWithPriority(priority);
